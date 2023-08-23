@@ -17,6 +17,12 @@ const routes: RouteConfig[] = [
     component: () => import('@/views/error-page/404.vue'),
     hidden: true,
   },
+  {
+    path: '/',
+    meta: { title: '' },
+    name: 'Dashboard',
+    component: () => import('@/views/dashboard/index.vue'),
+  },
   ...exampleRouter,
   // 404 page must be placed at the end !!!
   // using pathMatch install of "*" in vue-router 4.0

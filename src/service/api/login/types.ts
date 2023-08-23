@@ -1,3 +1,3 @@
 export interface ILoginApi {
-  get: () => Promise<any>
+  get: ({ token }: { token: string }) => Promise<any>
 }

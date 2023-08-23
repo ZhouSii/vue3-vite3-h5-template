@@ -2,10 +2,11 @@ import http from '@/service/http'
 import * as T from './types'
 
 const loginApi: T.ILoginApi = {
-  get() {
+  get(data) {
     return http({
-      url: '/sys/admin/user/currentUserInfo',
+      url: '/third/admin/tuojian/validateToken',
       method: 'post',
+      data,
     })
   },
 }

@@ -18,6 +18,8 @@ import postcsspxtoviewport from 'postcss-px-to-viewport'
 import pluginUnocss from 'unocss/vite'
 import unocssOptions from './unocssOptions'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+import vueJSX from '@vitejs/plugin-vue-jsx'
+
 // const { svgBuilder } = require('./src/icons/index.ts')
 
 // https://vitejs.dev/config/
@@ -32,6 +34,7 @@ export default ({ command, mode }) => {
     plugins: [
       pluginUnocss(unocssOptions),
       vue(),
+      vueJSX(),
       VueSetupExtend(),
       createSvgIconsPlugin({
         // 指定需要缓存的图标文件夹

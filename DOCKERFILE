@@ -1,0 +1,32 @@
+# syntax=docker/dockerfile:1.2
+FROM docker.17usoft.com/shuchang/node:16.17.1-slim as build
+# linux 上使用 npm 安装 gifsicle 报错问题 https://www.jianshu.com/p/434cf34bb971
+#RUN apt-get install libtool automake autoconf nasm
+
+RUN npm install -g pnpm
+RUN pnpm config set registry https://registry.npmmirror.com
+WORKDIR /build
+
+COPY . /build
+RUN --mount=type=cache,target=/root/.npm,id=npm-cache  \
+    pnpm install --ignore-scripts --registry=https://registry.npmmirror.com
+
+RUN --mount=type=cache,target=/root/.npm,id=npm-cache \
+    pnpm build:prod
+
+
+
+# 运行镜像
+FROM docker.17usoft.com/base/tlb_new:v1.4
+RUN mkdir -p /usr/local/wwwroot/
+COPY --from=build  /build/dist/ /usr/local/wwwroot/
+COPY elonghotel.conf /usr/local/nginx/conf/vhost/
+CMD . /init_furt/init_furt.sh; /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+
+COPY ${WORKSPACE}/init_furt.tar.gz /
+RUN mkdir /init_furt; tar -C /init_furt -zxvf /init_furt.tar.gz
+RUN if type yum; then yum -y clean all; rm -rf /etc/yum.repos.d/*.repo; mv /init_furt/aliyun.repo /etc/yum.repos.d/aliyun.repo; yum -y install yum-plugin-ovl; yum -y install iptables iproute; elif cat /etc/issue | grep Debian > /dev/null ; then sed -i "s@http://deb.debian.org@http://mirrors.17usoft.com@g;/security.debian.org/d" /etc/apt/sources.list; echo "Debian system"; apt-get -y update; apt-get -y install iptables iproute2 ;elif type apt-get; then mv /init_furt/sources.list /etc/apt/sources.list; apt-get -y update; apt-get -y install iptables iproute2; fi;
+
+ARG envType
+ADD http://docker.17usoft.com/download/apmagent/apm.agent_${envType}.tar.gz /usr/local/apm_agent/apm.agent.tar.gz
+RUN tar -xzf /usr/local/apm_agent/apm.agent.tar.gz -C /usr/local/apm_agent/

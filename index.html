@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="renderer" content="webkit" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+  <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico" /> -->
+  <link rel="icon" href="/favicon.ico" />
+  <title><%- title %></title>
+  <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+
+  <!-- <script type="text/javascript" src="https://unpkg.com/@dcloudio/uni-webview-js@0.0.3/index.js"></script> -->
+  <script type="text/javascript" src="./js/uni-webview-js.js"></script>
+  <script type="text/javascript"
+    src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=Q1hGaknQXfueAGas99LGL4dCxptjlIIt">
+  </script>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    #app:not([data-v-app]) {
+      height: 100vh;
+      background: rgba(0, 82, 83, 1);
+    }
+
+    .loading {
+      color: #ffffff;
+      font-size: 20px;
+      height: 20px;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -o-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-perspective: 500px;
+      -moz-perspective: 500px;
+      -o-perspective: 500px;
+      -ms-perspective: 500px;
+      perspective: 500px;
+      letter-spacing: 2px;
+      text-rendering: optimizelegibility;
+      -webkit-font-smoothing: antialiased;
+      text-shadow: 2px 2px 20px #ff0000;
+      margin-left: 20px;
+    }
+
+    .rotate {
+      display: inline;
+      position: absolute;
+      background-color: #ffffff;
+      color: #000000;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      -webkit-box-shadow: 0 0 60px 4px #000088;
+      -moz-box-shadow: 0 0 60px 4px #000088;
+      box-shadow: 0 0 60px 4px #000088;
+      -webkit-animation: animate-rotate-x 1s ease infinite;
+      -moz-animation: animate-rotate-x 1s ease infinite;
+      animation: animate-rotate-x 1s ease infinite;
+      margin-left: -20px;
+    }
+
+    @-webkit-keyframes animate-rotate-x {
+      0% {
+        -webkit-transform: rotateX(1deg);
+        -moz-transform: rotateX(1deg);
+        -o-transform: rotateX(1deg);
+        -ms-transform: rotateX(1deg);
+        transform: rotateX(1deg);
+      }
+
+      100% {
+        -webkit-transform: rotateX(360deg);
+        -moz-transform: rotateX(360deg);
+        -o-transform: rotateX(360deg);
+        -ms-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+      }
+    }
+
+    @-moz-keyframes animate-rotate-x {
+      0% {
+        -webkit-transform: rotateX(1deg);
+        -moz-transform: rotateX(1deg);
+        -o-transform: rotateX(1deg);
+        -ms-transform: rotateX(1deg);
+        transform: rotateX(1deg);
+      }
+
+      100% {
+        -webkit-transform: rotateX(360deg);
+        -moz-transform: rotateX(360deg);
+        -o-transform: rotateX(360deg);
+        -ms-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+      }
+    }
+
+    @keyframes animate-rotate-x {
+      0% {
+        -webkit-transform: rotateX(1deg);
+        -moz-transform: rotateX(1deg);
+        -o-transform: rotateX(1deg);
+        -ms-transform: rotateX(1deg);
+        transform: rotateX(1deg);
+      }
+
+      100% {
+        -webkit-transform: rotateX(360deg);
+        -moz-transform: rotateX(360deg);
+        -o-transform: rotateX(360deg);
+        -ms-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="loading">
+      <div class="rotate">L</div>
+      OADING...
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+
+  <!-- 埋点相关 -->
+  <script type="text/javascript">
+    var _tcq = _tcq || [];
+    var _timediff;
+    if (typeof _tcopentime != "undefined") {
+      _timediff = new Date().getTime() - _tcopentime;
+    }
+    _tcq.push(['_serialid', 0]); //如果是下单页面，需要传入订单号，多个订单号用下划分割 "_"
+    _tcq.push(['_vrcode', '10162-291-0']); //产品号见下面解释，最后一位默认为0，写成其他的统计不到，此条代码最重要
+    _tcq.push(['_refId', 0]); //Refid需要传入来源refid，不同平台的读取方法不同，项目自己读取Refid
+    _tcq.push(['_userId', 0]); //传入访问者中登录的会员ID，未登录的为0，不同平台的读取方法不同，项目自己读取会员ID
+    _tcq.push(['_openTime', _timediff]);
+  </script>
+  <script type='text/javascript' src=" //vstlog.17usoft.com/vst.ashx" charset="utf-8"></script>
+</body>
+
+</html>

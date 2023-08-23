@@ -1,0 +1,31 @@
+@import './transition.scss';
+@import './reset-style.scss';
+@import './reset-vant-style.scss';
+
+.folder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgb(237, 240, 247);
+  position: relative;
+}
+
+.cancelBtn {
+  background: rgb(240, 240, 240);
+
+  .van-button__text {
+    color: #383838;
+  }
+}
+
+.van-hairline--top-bottom:after,
+.van-hairline-unset--top-bottom:after {
+  border-width: 0;
+}
+
+.scroll-base {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  min-height: 101%;
+}

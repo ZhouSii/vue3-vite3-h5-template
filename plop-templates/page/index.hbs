@@ -1,0 +1,33 @@
+{{#if template}}
+  <template>
+    <div class='h-full'>
+      {{#if mPage}}
+        <m-page class='{{properCase name}}'>
+          <template #header>
+            <div class='header-title mb-10px'>
+              header
+              <!-- <span class="more" @click="onClickMore">更多</span> -->
+            </div>
+            <div class='header-info mb-5px'>
+            </div>
+            <div class='header-info'></div>
+          </template>
+          <template #content>content</template>
+          <template #footer>footer</template>
+        </m-page>
+      {{/if}}
+    </div>
+  </template>
+{{/if}}
+
+{{#if script}}
+  <script lang='ts'>
+    export default { name: '{{properCase name}}' }
+  </script>
+  <script setup lang='ts'></script>
+{{/if}}
+
+{{#if style}}
+  <style lang='scss' scoped>
+  </style>
+{{/if}}

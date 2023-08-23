@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+/**
+ * @description 全局主题变量配置
+ */
+:root {
+  --edt-tips-yellow: #FF8D1A;
+  --edt-tips-purple: #AC33C1;
+
+
+  --edt-c-white: #ffffff;
+  --edt-c-white-soft: #f9f9f9;
+  --edt-c-white-mute: #f1f1f1;
+
+  --edt-c-black: #1a1a1a;
+  --edt-c-black-1: #383838;
+  --edt-c-black-pure: #000000;
+  --edt-c-black-soft: #242424;
+  --edt-c-black-mute: #2f2f2f;
+
+  --edt-c-gray: #8e8e8e;
+  --edt-c-gray-light-1: #aeaeae;
+  --edt-c-gray-light-2: #c7c7c7;
+  --edt-c-gray-light-3: #d1d1d1;
+  --edt-c-gray-light-4: #EDEDED;
+  --edt-c-gray-light-5: #f2f2f2;
+  --edt-c-gray-dark-1: #636363;
+  --edt-c-gray-dark-2: #484848;
+  --edt-c-gray-dark-3: #3a3a3a;
+  --edt-c-gray-dark-4: #282828;
+  --edt-c-gray-dark-5: #202020;
+
+  --edt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --edt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --edt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --edt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --edt-c-indigo: #213547;
+  --edt-c-indigo-soft: #476582;
+  --edt-c-indigo-light: #aac8e4;
+  --edt-c-indigo-lighter: #c9def1;
+  --edt-c-indigo-dark: #1d2f3f;
+  --edt-c-indigo-darker: #14212e;
+
+  --edt-c-text-light-1: var(--edt-c-indigo);
+  --edt-c-text-light-2: rgba(60, 60, 60, 0.7);
+  --edt-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --edt-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --edt-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --edt-c-text-dark-2: rgba(235, 235, 235, 0.6);
+  --edt-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --edt-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --edt-c-green: #0DBA52;
+  --edt-c-green-light: #41c6b0;
+  --edt-c-green-lighter: #41c6b0;
+  --edt-c-green-dark: #149684;
+  --edt-c-green-darker: #149684;
+  --edt-c-green-dimm: #062521;
+
+  --edt-c-green-dimm-1: rgba(66, 184, 131, 0.5);
+  --edt-c-green-dimm-2: rgba(66, 184, 131, 0.25);
+  --edt-c-green-dimm-3: rgba(66, 184, 131, 0.05);
+
+  --edt-c-blue: #646cff;
+  --edt-c-blue-base: #2a82e4;
+  --edt-c-blue-light: #747bff;
+  --edt-c-blue-lighter: #9499ff;
+  --edt-c-blue-lightest: #bcc0ff;
+  --edt-c-blue-dark: #535bf2;
+  --edt-c-blue-darker: #454ce1;
+  --edt-c-blue-dimm: rgba(100, 108, 255, 0.08);
+
+  --edt-c-yellow: #ffc517;
+  --edt-c-yellow-light: #fcd253;
+  --edt-c-yellow-lighter: #fcfc7c;
+  --edt-c-yellow-darker: #ad850e;
+  --edt-c-yellow-dimm-1: rgba(255, 197, 23, 0.5);
+  --edt-c-yellow-dimm-2: rgba(255, 197, 23, 0.25);
+  --edt-c-yellow-dimm-3: rgba(255, 197, 23, 0.05);
+
+  --edt-c-red: #d43030;
+  --edt-c-red-light: #f54e82;
+  --edt-c-red-lighter: #fd1d7c;
+  --edt-c-red-darker: #ab2131;
+  --edt-c-red-dimm-1: rgba(237, 60, 80, 0.5);
+  --edt-c-red-dimm-2: rgba(237, 60, 80, 0.25);
+  --edt-c-red-dimm-3: rgba(237, 60, 80, 0.05);
+}
+
+//框架默认主题色
+$base-color-default: #1890ff;
+//默认层级
+$base-z-index: 999;
+//横向布局纵向布局时菜单背景色
+$base-menu-background: #2f3447;
+//菜单文字颜色
+$base-menu-color: hsla(0, 0%, 100%, 0.95);
+//菜单选中文字颜色
+$base-menu-color-active: hsla(0, 0%, 100%, 0.95);
+//菜单选中背景色
+$base-menu-background-active: $base-color-default;
+//标题颜色
+$base-title-color: #fff;
+//字体大小配置
+$base-font-size-small: 12px;
+$base-font-size-default: 14px;
+$base-font-size-big: 16px;
+$base-font-size-bigger: 18px;
+$base-font-size-max: 22px;
+$base-font-color: #606266;
+$base-color-blue: $base-color-default;
+$base-color-green: #47ba80;
+$base-color-white: #fff;
+$base-color-black: #000;
+$base-color-yellow: #fac858;
+$base-color-orange: #ff6700;
+$base-color-red: #e72100;
+$base-color-gray: rgba(0, 0, 0, 0.65);
+$base-main-width: 1279px;
+$base-border-radius: 2px;
+$base-border-color: #dcdfe6;
+//输入框高度
+$base-input-height: 32px;
+//默认paddiing
+$base-padding: 20px;
+//默认阴影
+$base-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+//横向布局时top-bar、logo、一级菜单的高度
+$base-top-bar-height: 65px;
+//纵向布局时logo的高度
+$base-logo-height: 75px;
+//顶部nav-bar的高度
+$base-nav-bar-height: 60px;
+//顶部多标签页tabs-bar的高度
+$base-tabs-bar-height: 55px;
+//顶部多标签页tabs-bar中每一个item的高度
+$base-tag-item-height: 34px;
+//菜单li标签的高度
+$base-menu-item-height: 50px;
+//app-main的高度
+$base-app-main-height: calc(100vh - #{$base-nav-bar-height} - #{$base-tabs-bar-height} - #{$base-padding} - #{$base-padding} - 55px - 55px);
+//纵向布局时左侧导航未折叠时的宽度
+$base-left-menu-width: 256px;
+//纵向布局时左侧导航未折叠时右侧内容的宽度
+$base-right-content-width: calc(100% - #{$base-left-menu-width});
+//纵向布局时左侧导航已折叠时的宽度
+$base-left-menu-width-min: 65px;
+//纵向布局时左侧导航已折叠时右侧内容的宽度
+$base-right-content-width-min: calc(100% - #{$base-left-menu-width-min});
+//默认动画
+$base-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+border 0s,
+background 0s,
+color 0s,
+font-size 0s;
+//默认动画长
+$base-transition-time: 0.3s;
+
+// 测试
+// define global var
+$defaultSize: 14px;
+
+$defaultLineHeight:1;
+
+$test-color: red;
+
+:export {
+  //菜单文字颜色变量导出
+  menu-color: $base-menu-color;
+  //菜单选中文字颜色变量导出
+  menu-color-active: $base-menu-color-active;
+  //菜单背景色变量导出
+  menu-background: $base-menu-background;
+}
